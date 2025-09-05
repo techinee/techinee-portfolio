@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Techinee Pummakarnchana - Interactive Resume</title>
+<style>
+    body {
+        margin:0;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        color: #333;
+    }
+    header {
+        background: #004080;
+        color: white;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    header h1 {
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+    header p { font-size: 1.2rem; }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        background: #003366;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    nav button {
+        background: none;
+        border: none;
+        color: white;
+        padding: 15px 25px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: 0.3s;
+    }
+    nav button:hover { background: #002244; }
+
+    section {
+        display: none;
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: auto;
+        background: white;
+        margin-bottom: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        animation: fadeIn 0.8s ease-in-out;
+    }
+    section.active { display: block; }
+
+    h2 {
+        color: #004080;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #004080;
+        padding-bottom: 5px;
+    }
+
+    ul { list-style: none; padding-left: 0; }
+    ul li { margin-bottom: 10px; }
+
+    .skills span {
+        display: inline-block;
+        background: #004080;
+        color: white;
+        padding: 5px 10px;
+        margin: 5px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #004080;
+        color: white;
+    }
+
+    @keyframes fadeIn {
+        from {opacity:0; transform: translateY(20px);}
+        to {opacity:1; transform: translateY(0);}
+    }
+
+    @media(max-width:768px) { section { padding: 40px 15px; } }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Techinee Pummakarnchana</h1>
+    <p>Support Analyst / Technical Support</p>
+</header>
+
+<nav>
+    <button onclick="showSection('contact')">Contact</button>
+    <button onclick="showSection('work')">Work</button>
+    <button onclick="showSection('skills')">Skills</button>
+    <button onclick="showSection('education')">Education</button>
+    <button onclick="showSection('certifications')">Certifications</button>
+</nav>
+
+<section id="contact" class="active">
+    <h2>Contact</h2>
+    <ul>
+        <li>📞 092-750-3465</li>
+        <li>✉️ techinee.tt@gmail.com</li>
+        <li>💬 LINE: tangthaikub</li>
+        <li>🏠 23/55 Ngamwongwan Rd, Lat Yao, Chatuchak, Bangkok 10900</li>
+    </ul>
+</section>
+
+<section id="work">
+    <h2>Work Experience</h2>
+    <p><strong>OGA International Co., Ltd.</strong> (Oct 2022 - Present)</p>
+    <p><strong>Position:</strong> Support Business Analyst</p>
+    <ul>
+        <li>Managed Warehouse Management System (WMS) for Lotus (frontend & backend).</li>
+        <li>Investigated and resolved system issues; prepared dashboards and reports.</li>
+        <li>Managed warehouse operations via API integrations with Körber software; tested and optimized API requests in Postman.</li>
+    </ul>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+        <span>SQL</span><span>PHP</span><span>Python</span><span>JavaScript</span><span>Postman</span>
+        <span>Adobe XD</span><span>Figma</span><span>MS Word</span><span>Excel</span><span>PowerPoint</span>
+        <span>Testing</span><span>Communication</span><span>Time Management</span><span>Adaptability</span><span>Flexibility</span>
+    </div>
+</section>
+
+<section id="education">
+    <h2>Education</h2>
+    <ul>
+        <li>2019-2022: King Mongkut's University of Technology North Bangkok</li>
+        <li>2013-2018: Prachinratsadornamroong</li>
+    </ul>
+</section>
+
+<section id="certifications">
+    <h2>Certifications & Volunteer Work</h2>
+    <ul>
+        <li>Assistant Professor of Legal Training at Computer Camp</li>
+        <li>Seminar: "Based on the UX Writer" at SCB Tech X</li>
+        <li>OpenHouse Booth Activities at KMUTNB</li>
+        <li>Online certification for Monsoonsim business skills</li>
+        <li>Board training assistant for Arduino</li>
+        <li>"Bringing the Kids to Build the Web" project using React</li>
+    </ul>
+</section>
+
+<footer>
+    © 2025 Techinee Pummakarnchana
+</footer>
+
+<script>
+    function showSection(id){
+        const sections = document.querySelectorAll('section');
+        sections.forEach(sec => sec.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        window.scrollTo({top:0, behavior:'smooth'});
+    }
+</script>
+
+</body>
+</html>
